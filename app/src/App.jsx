@@ -43,7 +43,7 @@ function App() {
   const getResponse = async () => {
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3000/ask", {
+      const response = await axios.post("https://llmchatbotapi.vercel.app/ask", {
         history: chatHistory,
         message: message,
       });
