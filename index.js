@@ -18,25 +18,28 @@ app.use(express.json());
 
 app.post("/ask", async (req, res) => {
   const { history, message } = req.body;
-  console.log(message);
+
+  // Validate required fields
+  if (!message) {
+    return res.status(400).json({ error: "Message is required" });
+  }
+
+  if (!Array.isArray(history)) {
+    return res.status(400).json({ error: "History should be an array" });
+  }
+
   try {
-
-    const model = genAI.getGenerativeModel({
-        model: "gemini-pro",
-    });
-
-    const chat = await model.startChat({
-      history: history,
-    })
-
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const chat = await model.startChat({ history });
     const result = await chat.sendMessage(message);
-    
+
     res.json({ data: result.response.text() });
   } catch (error) {
     console.error("Error generating response:", error);
     res.status(500).json({ error: "Failed to get a response from Google Generative AI" });
   }
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
