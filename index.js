@@ -6,7 +6,12 @@ const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
-app.use(cors());
+app.use(cors({
+  origin: "https://llmchatbotv1.vercel.app", 
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"],
+}));
+
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 app.use(express.json());
