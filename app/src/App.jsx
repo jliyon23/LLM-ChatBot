@@ -81,7 +81,7 @@ function App() {
     <>
       <div className="w-full min-h-screen flex flex-col items-center justify-center bg-gray-900">
         <h2 className="text-white text-2xl flex gap-3 items-center font-extrabold mb-4">
-          Gemini LLM <span className="text-green-400">ChatBot</span>
+          LLM <span className="text-green-400">ChatBot</span>
           <a href="https://github.com/jliyon23" className="cursor-pointer"><FaGithub /></a>
         </h2>
 
