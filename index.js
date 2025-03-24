@@ -12,7 +12,7 @@ app.use(cors({
   allowedHeaders: ["Content-Type"],
 }));
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GEMINIKEY);
 
 app.use(express.json());
 
