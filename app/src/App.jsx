@@ -179,7 +179,7 @@ function App() {
       </div>
       
       <div className="text-gray-600 text-xs mt-4">
-        Powered by AI • © {new Date().getFullYear()}
+        Powered by Joseph Liyon • © {new Date().getFullYear()}
       </div>
     </div>
   );
