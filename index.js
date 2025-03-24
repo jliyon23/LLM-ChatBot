@@ -29,7 +29,7 @@ app.post("/ask", async (req, res) => {
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const chat = await model.startChat({ history });
     const result = await chat.sendMessage(message);
 
