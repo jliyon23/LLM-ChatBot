@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 app.use(cors({
-  origin: ["https://llmchatbotv1.vercel.app", "https://josephliyon.tech", "http://localhost:5173"], 
+  origin: ["https://llmchatbotv1.vercel.app", "https://www.josephliyon.tech", "http://localhost:5173"], 
   methods: ["POST"],
   allowedHeaders: ["Content-Type"],
 }));
